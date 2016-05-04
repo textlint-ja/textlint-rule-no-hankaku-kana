@@ -37,7 +37,7 @@ See [Releases page](https://github.com/azu/textlint-rule-no-hankaku-kana/release
 
 このうち 
 
-- Halfwidth CJK punctuation（U+FF61〜FF64
+- Halfwidth CJK punctuation（U+FF61〜FF64）
 - Halfwidth Katakana variants（U+FF65〜FF9F）
 
 を対象している。
