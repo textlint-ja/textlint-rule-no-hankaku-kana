@@ -2,6 +2,13 @@
 
 textlint rule that disallow to use 半角カタカナ.
 
+> 半角カナ（はんかくカナ）、半角片仮名（はんかくかたかな, Halfwidth Katakana）とは、幅が半分（半角）の片仮名文字の事。
+
+半角カナとしては以下を対象としています。
+
+- Halfwidth CJK punctuation（U+FF61〜FF64）
+- Halfwidth Katakana variants（U+FF65〜FF9F）
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
@@ -32,15 +39,6 @@ textlint --rule no-hankaku-kana README.md
 See [Releases page](https://github.com/azu/textlint-rule-no-hankaku-kana/releases).
 
 ## Further Reading
-
-> 半角カナ（はんかくカナ）、半角片仮名（はんかくかたかな, Halfwidth Katakana）とは、幅が半分（半角）の片仮名文字の事。
-
-このうち 
-
-- Halfwidth CJK punctuation（U+FF61〜FF64）
-- Halfwidth Katakana variants（U+FF65〜FF9F）
-
-を対象している。
 
 - [半角カナ - Wikipedia](https://ja.wikipedia.org/wiki/%E5%8D%8A%E8%A7%92%E3%82%AB%E3%83%8A "半角カナ - Wikipedia")
 
