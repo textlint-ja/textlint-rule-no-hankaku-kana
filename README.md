@@ -41,6 +41,7 @@ See [Releases page](https://github.com/azu/textlint-rule-no-hankaku-kana/release
 ## Further Reading
 
 - [半角カナ - Wikipedia](https://ja.wikipedia.org/wiki/%E5%8D%8A%E8%A7%92%E3%82%AB%E3%83%8A "半角カナ - Wikipedia")
+- [JTF日本語標準スタイルガイド](https://github.com/azu/textlint-rule-preset-JTF-style "JTF日本語標準スタイルガイド") 2.1.5 カタカナ
 
 ## Running tests
 
