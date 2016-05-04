@@ -1,4 +1,4 @@
-# textlint-rule-no-hankaku-kana
+# textlint-rule-no-hankaku-kana [![Build Status](https://travis-ci.org/azu/textlint-rule-no-hankaku-kana.svg?branch=master)](https://travis-ci.org/azu/textlint-rule-no-hankaku-kana)
 
 textlint rule that disallow to use 半角カタカナ.
 
