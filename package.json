@@ -22,8 +22,9 @@
     "test": "test"
   },
   "keywords": [
+    "japanese",
     "textlint",
-    "japanese"
+    "textlintrule"
   ],
   "scripts": {
     "test": "textlint-scripts test",
