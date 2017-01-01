@@ -1,6 +1,8 @@
-# textlint-rule-no-hankaku-kana [![Build Status](https://travis-ci.org/azu/textlint-rule-no-hankaku-kana.svg?branch=master)](https://travis-ci.org/azu/textlint-rule-no-hankaku-kana)
+# textlint-rule-no-hankaku-kana [![Build Status](https://travis-ci.org/textlint-ja/textlint-rule-no-hankaku-kana.svg?branch=master)](https://travis-ci.org/textlint-ja/textlint-rule-no-hankaku-kana)
 
 textlint rule that disallow to use 半角カタカナ.
+
+半角カナの利用を禁止する[textlint](https://github.com/textlint/textlint "textlint")ルール。
 
 > 半角カナ（はんかくカナ）、半角片仮名（はんかくかたかな, Halfwidth Katakana）とは、幅が半分（半角）の片仮名文字の事。
 
@@ -36,7 +38,7 @@ textlint --rule no-hankaku-kana README.md
 
 ## Changelog
 
-See [Releases page](https://github.com/azu/textlint-rule-no-hankaku-kana/releases).
+See [Releases page](https://github.com/textlint-ja/textlint-rule-no-hankaku-kana/releases).
 
 ## Further Reading
 
@@ -52,7 +54,7 @@ Install devDependencies and Run `npm test`:
 ## Contributing
 
 Pull requests and stars are always welcome.
-For bugs and feature requests, [please create an issue](https://github.com/azu/textlint-rule-no-hankaku-kana/issues).
+For bugs and feature requests, [please create an issue](https://github.com/textlint-ja/textlint-rule-no-hankaku-kana/issues).
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
