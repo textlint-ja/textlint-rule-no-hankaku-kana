@@ -1,15 +1,12 @@
 // LICENSE : MIT
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const textlint_tester_1 = __importDefault(require("textlint-tester"));
-const tester = new textlint_tester_1.default();
+import TextLintTester from "textlint-tester";
+
+const tester = new TextLintTester();
 // rule
-const textlint_rule_no_hankaku_kana_1 = __importDefault(require("../src/textlint-rule-no-hankaku-kana"));
+import rule from "../src/textlint-rule-no-hankaku-kana";
 // ruleName, rule, { valid, invalid }
-tester.run("no-hankaku-kana", textlint_rule_no_hankaku_kana_1.default, {
+tester.run("no-hankaku-kana", rule, {
     valid: [
         "カタカナ",
         "ひらがな",
@@ -22,8 +19,7 @@ tester.run("no-hankaku-kana", textlint_rule_no_hankaku_kana_1.default, {
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
-                    line: 1,
-                    column: 1
+                    range: [0, 4],
                 }
             ]
         },
@@ -33,29 +29,46 @@ tester.run("no-hankaku-kana", textlint_rule_no_hankaku_kana_1.default, {
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
-                    line: 1,
-                    column: 1
+                    range: [0, 4]
                 },
+
                 {
                     message: `Disallow to use 半角カタカナ: "ﾊﾝｶｸ"`,
-                    line: 1,
-                    column: 11
+                    range: [10, 14]
                 }
             ]
         },
+
         // multiple match in multiple lines
         {
             text: "ｶﾀｶﾅ\nﾊﾝｶｸ",
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
-                    line: 1,
-                    column: 1
+                    loc: {
+                        start: {
+                            line: 1,
+                            column: 1
+                        },
+                        end: {
+                            line: 1,
+                            column: 5
+                        }
+                    }
                 },
+
                 {
                     message: `Disallow to use 半角カタカナ: "ﾊﾝｶｸ"`,
-                    line: 2,
-                    column: 1
+                    loc: {
+                        start: {
+                            line: 2,
+                            column: 1
+                        },
+                        end: {
+                            line: 2,
+                            column: 5
+                        }
+                    }
                 }
             ]
         }
