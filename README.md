@@ -8,8 +8,8 @@ textlint rule that disallow to use 半角カタカナ.
 
 半角カナとしては以下を対象としています。
 
-- Halfwidth CJK punctuation（U+FF61〜FF64）
-- Halfwidth Katakana variants（U+FF65〜FF9F）
+- Half-width CJK punctuation（U+FF61〜FF64）
+- Half-width Katakana variants（U+FF65〜FF9F）
 
 ## Install
 
