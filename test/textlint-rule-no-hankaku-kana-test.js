@@ -1,11 +1,15 @@
 // LICENSE : MIT
 "use strict";
-const TextLintTester = require("textlint-tester");
-const tester = new TextLintTester();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const textlint_tester_1 = __importDefault(require("textlint-tester"));
+const tester = new textlint_tester_1.default();
 // rule
-import rule from "../src/textlint-rule-no-hankaku-kana";
+const textlint_rule_no_hankaku_kana_1 = __importDefault(require("../src/textlint-rule-no-hankaku-kana"));
 // ruleName, rule, { valid, invalid }
-tester.run("no-hankaku-kana", rule, {
+tester.run("no-hankaku-kana", textlint_rule_no_hankaku_kana_1.default, {
     valid: [
         "カタカナ",
         "ひらがな",
@@ -32,7 +36,6 @@ tester.run("no-hankaku-kana", rule, {
                     line: 1,
                     column: 1
                 },
-
                 {
                     message: `Disallow to use 半角カタカナ: "ﾊﾝｶｸ"`,
                     line: 1,
@@ -40,7 +43,6 @@ tester.run("no-hankaku-kana", rule, {
                 }
             ]
         },
-
         // multiple match in multiple lines
         {
             text: "ｶﾀｶﾅ\nﾊﾝｶｸ",
@@ -50,7 +52,6 @@ tester.run("no-hankaku-kana", rule, {
                     line: 1,
                     column: 1
                 },
-
                 {
                     message: `Disallow to use 半角カタカナ: "ﾊﾝｶｸ"`,
                     line: 2,
