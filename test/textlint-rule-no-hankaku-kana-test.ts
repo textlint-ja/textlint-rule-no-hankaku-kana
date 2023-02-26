@@ -1,6 +1,7 @@
 // LICENSE : MIT
 "use strict";
-const TextLintTester = require("textlint-tester");
+import TextLintTester from "textlint-tester";
+
 const tester = new TextLintTester();
 // rule
 import rule from "../src/textlint-rule-no-hankaku-kana";
@@ -18,8 +19,7 @@ tester.run("no-hankaku-kana", rule, {
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
-                    line: 1,
-                    column: 1
+                    range: [0, 4],
                 }
             ]
         },
@@ -29,14 +29,12 @@ tester.run("no-hankaku-kana", rule, {
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
-                    line: 1,
-                    column: 1
+                    range: [0, 4]
                 },
 
                 {
                     message: `Disallow to use 半角カタカナ: "ﾊﾝｶｸ"`,
-                    line: 1,
-                    column: 11
+                    range: [10, 14]
                 }
             ]
         },
@@ -47,14 +45,30 @@ tester.run("no-hankaku-kana", rule, {
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
-                    line: 1,
-                    column: 1
+                    loc: {
+                        start: {
+                            line: 1,
+                            column: 1
+                        },
+                        end: {
+                            line: 1,
+                            column: 5
+                        }
+                    }
                 },
 
                 {
                     message: `Disallow to use 半角カタカナ: "ﾊﾝｶｸ"`,
-                    line: 2,
-                    column: 1
+                    loc: {
+                        start: {
+                            line: 2,
+                            column: 1
+                        },
+                        end: {
+                            line: 2,
+                            column: 5
+                        }
+                    }
                 }
             ]
         }

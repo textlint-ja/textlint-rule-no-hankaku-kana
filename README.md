@@ -1,4 +1,4 @@
-# textlint-rule-no-hankaku-kana [![Build Status](https://travis-ci.org/textlint-ja/textlint-rule-no-hankaku-kana.svg?branch=master)](https://travis-ci.org/textlint-ja/textlint-rule-no-hankaku-kana)
+# textlint-rule-no-hankaku-kana [![Actions Status: test](https://github.com/textlint-ja/textlint-rule-no-hankaku-kana/workflows/test/badge.svg)](https://github.com/textlint-ja/textlint-rule-no-hankaku-kana/actions?query=workflow%3A"test")
 
 textlint rule that disallow to use 半角カタカナ.
 
@@ -8,8 +8,8 @@ textlint rule that disallow to use 半角カタカナ.
 
 半角カナとしては以下を対象としています。
 
-- Halfwidth CJK punctuation（U+FF61〜FF64）
-- Halfwidth Katakana variants（U+FF65〜FF9F）
+- Half-width CJK punctuation（U+FF61〜FF64）
+- Half-width Katakana variants（U+FF65〜FF9F）
 
 ## Install
 
@@ -49,7 +49,7 @@ See [Releases page](https://github.com/textlint-ja/textlint-rule-no-hankaku-kana
 
 Install devDependencies and Run `npm test`:
 
-    npm i -d && npm test
+    npm test
 
 ## Contributing
 
