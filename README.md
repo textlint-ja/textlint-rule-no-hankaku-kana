@@ -36,6 +36,18 @@ Via CLI
 textlint --rule no-hankaku-kana README.md
 ```
 
+## Fixable
+
+[![Textlint fixable](https://img.shields.io/badge/textlint-fixable-green.svg?style=social)](https://textlint.github.io/) 
+
+`textlint --fix` での自動修正に対応しています。
+
+*   NFCで表現できる濁点・半濁点はNFCに修正
+    *   例：ﾊﾟﾝﾀﾞはパンダに修正
+*   NFCで表現できない濁点・半濁点はNFDに修正
+    *   例：ｱ&#xff9e;は[ア&#x3099;](https://ja.wikipedia.org/wiki/%E3%81%82%E3%82%99)に修正
+    *   例：ﾂ&#xff9f;は[ツ&#x309a;](https://ja.wikipedia.org/wiki/%E3%83%84%E3%82%9C)に修正
+
 ## Changelog
 
 See [Releases page](https://github.com/textlint-ja/textlint-rule-no-hankaku-kana/releases).

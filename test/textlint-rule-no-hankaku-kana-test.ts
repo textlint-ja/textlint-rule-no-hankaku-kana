@@ -16,6 +16,7 @@ tester.run("no-hankaku-kana", rule, {
     invalid: [
         {
             text: "ｶﾀｶﾅ",
+            output: "カタカナ",
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
@@ -26,6 +27,7 @@ tester.run("no-hankaku-kana", rule, {
         // multiple hit items in a line
         {
             text: `ｶﾀｶﾅはゼンカクとﾊﾝｶｸがある`,
+            output: `カタカナはゼンカクとハンカクがある`,
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
@@ -42,6 +44,7 @@ tester.run("no-hankaku-kana", rule, {
         // multiple match in multiple lines
         {
             text: "ｶﾀｶﾅ\nﾊﾝｶｸ",
+            output: "カタカナ\nハンカク",
             errors: [
                 {
                     message: `Disallow to use 半角カタカナ: "ｶﾀｶﾅ"`,
@@ -71,6 +74,26 @@ tester.run("no-hankaku-kana", rule, {
                     }
                 }
             ]
-        }
+        },
+        {
+            text: `NFCで表現できる濁点・半濁点はNFCに修正する：ﾊﾟﾝﾀﾞ`,
+            output: `NFCで表現できる濁点・半濁点はNFCに修正する：パンダ`,
+            errors: [
+                {
+                    message: `Disallow to use 半角カタカナ: "ﾊﾟﾝﾀﾞ"`,
+                    range: [25, 30]
+                },
+            ]
+        },
+        {
+            text: `NFCで表現できない濁点・半濁点はNFDに修正する：ｱ\u{ff9e}ﾂ\u{ff9f}`,
+            output: `NFCで表現できない濁点・半濁点はNFDに修正する：ア\u{3099}ツ\u{309a}`,
+            errors: [
+                {
+                    message: `Disallow to use 半角カタカナ: "ｱ\u{ff9e}ﾂ\u{ff9f}"`,
+                    range: [26, 30]
+                },
+            ]
+        },
     ]
 });
